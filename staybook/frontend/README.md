@@ -1,69 +1,31 @@
-# React + TypeScript + Vite
+# StayBook · 숙소 예약 DApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+StayBook은 블록체인 기반으로 숙소를 등록하고 예약할 수 있는 간단한 DApp입니다.  
+호스트는 숙소를 등록하고 게스트는 날짜를 선택해 예약할 수 있으며, 결제는 USDC(Sepolia 테스트넷)로 진행됩니다.  
 
-Currently, two official plugins are available:
+### 🏠 호스트 페이지
+- 숙소 등록 (1박 요금, 취소 가능 시간, 정산 방식 설정)
+- 등록된 숙소 목록 확인
+- 예약 현황 달력에서 예약일자 확인
+- 예약 정산 및 출금 (에스크로 모드)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🧳 게스트 페이지
+- 등록된 숙소 목록 확인
+- 날짜 선택 후 예약 가능 여부 확인
+- 숙소 예약 및 결제
+- 내 예약 내역 불러오기 및 취소
+- 예약 현황 달력에서 예약/가능 일자 확인
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 실행 방법
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. 클론 및 설치
+```bash
+git clone https://github.com/your-username/staybook.git
+cd staybook/frontend
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 2. 개발서버 실행
+```bash
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

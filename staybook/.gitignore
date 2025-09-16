@@ -15,11 +15,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# === Env ===
-.env
-.env.local
-.env.*.local
-/frontend/.env
 
 # === Coverage / Test ===
 coverage/

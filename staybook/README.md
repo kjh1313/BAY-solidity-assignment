@@ -21,7 +21,7 @@ StayBook은 블록체인 기반으로 숙소를 등록하고 예약할 수 있�
 
 ### 1. 클론 및 설치
 ```bash
-git clone https://github.com/your-username/staybook.git
+git clone https://github.com/kjh1313/BAY-solidity-assignment.git
 cd staybook/frontend
 npm install
 ```
